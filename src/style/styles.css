@@ -1,0 +1,55 @@
+.container{
+    display: grid;
+    gap: 30px;
+    justify-content: center;
+    justify-items: center;
+}
+
+.radio-buttons {
+    position: relative;
+    font-size: 15px;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
+    display: grid;
+}
+
+
+.radiobtn {
+    position: relative;
+    display: block;
+    text-align:center;
+}
+
+.radiobtn label {
+    display: block;
+    background:none;
+    color:#01a7e1;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: 2px solid #01a7e1;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+input[type="radio"] {
+    display: none;
+    position: absolute;
+    width: 100%;
+    appearance: none;
+}
+
+input[type="radio"]:checked + label {
+    background:#01a7e1;
+    color:#fff;
+}
+
+table, th, td {
+    border: 1px solid;
+    padding: 5px;
+}
+
+.title {
+    margin: 0 auto;
+}

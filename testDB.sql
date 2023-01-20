@@ -70,7 +70,6 @@ CREATE TABLE `dismission_reason` (
 --
 
 INSERT INTO `dismission_reason` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'name', 'description', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (2, 'drugs', 'Наркотическое опьянение', '2013-12-28 18:38:09', '2013-12-28 18:38:09'),
 (3, 'alcohol', 'Алкогольное опьянение', '2013-12-28 18:38:09', '2013-12-28 18:38:09'),
 (4, 'at_will', 'По собственному желанию', '2013-12-28 18:38:09', '2013-12-28 18:38:09'),
@@ -506,3 +505,5 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
