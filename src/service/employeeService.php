@@ -12,17 +12,23 @@ class employeeService
 		$this->employeeRepository = new employeeRepository();
 	}
 
+    /**
+     * Метод получает данные из БД, мэпит их и возвращает клиенту 
+     */
     public function getAllEmployees($page = 1)
     {
+        // получение данных их БД
         $getAllEmployees = $this->employeeRepository->getAllEmployees([
             'page' => $page,
             'limit' => 10,
         ]);
 
+        // проверка что такие сотрудники есть
         if (empty($getAllEmployees['data'])){
             return "Таких сотрудников не найдено!";
         }
 
+        // подготовка ответа на клиент
         $response = 
             '<thead>
                 <tr>
@@ -46,28 +52,31 @@ class employeeService
             }
 
             $response.= "</tr>";
-            
         }
 
         $response.= "</tbody>";
 
 
         return $response;
-
     }
 
-
+    /**
+     * Метод получает данные из БД, мэпит их и возвращает клиенту 
+     */
     public function getProbationaryPeriod($page = 1)
     {
+        // получение данных их БД
         $getAllEmployees = $this->employeeRepository->getProbationaryPeriod([
             'page' => $page,
             'limit' => 10
         ]);
 
+        // проверка что такие сотрудники есть
         if (empty($getAllEmployees['data'])){
             return "Таких сотрудников не найдено!";
         }
 
+        // подготовка ответа на клиент
         $response = 
             '<thead>
                 <tr>
@@ -91,28 +100,31 @@ class employeeService
             }
 
             $response.= "</tr>";
-            
         }
 
         $response.= "</tbody>";
 
 
         return $response;
-
     }
 
-
+    /**
+     * Метод получает данные из БД, мэпит их и возвращает клиенту 
+     */
     public function getDismissedEmployees($page = 1)
     {
+        // получение данных их БД
         $getAllEmployees = $this->employeeRepository->getDismissedEmployees([
             'page' => $page,
             'limit' => 10
         ]);
 
+        // проверка что такие сотрудники есть
         if (empty($getAllEmployees['data'])){
             return "Таких сотрудников не найдено!";
         }
 
+        // подготовка ответа на клиент
         $response = 
             '<thead>
                 <tr>
@@ -134,28 +146,31 @@ class employeeService
             }
 
             $response.= "</tr>";
-            
         }
 
         $response.= "</tbody>";
 
 
         return $response;
-
     }
 
-
+    /**
+     * Метод получает данные из БД, мэпит их и возвращает клиенту 
+     */
     public function getLastHiredEmployees($page = 1)
     {
+        // получение данных их БД
         $getAllEmployees = $this->employeeRepository->getLastHiredEmployees([
             'page' => $page,
             'limit' =>10
         ]);
 
+        // проверка что такие сотрудники есть
         if (empty($getAllEmployees['data'])){
             return "Таких сотрудников не найдено!";
         }
 
+        // подготовка ответа на клиент
         $response = 
             '<thead>
                 <tr>
@@ -169,7 +184,6 @@ class employeeService
             </thead>
             <tbody>';
 
-
         foreach ($getAllEmployees['data'] as $employe) {
 
             $response.= "<tr>";
@@ -179,14 +193,12 @@ class employeeService
             }
 
             $response.= "</tr>";
-            
         }
 
         $response.= "</tbody>";
 
 
         return $response;
-
     }
 
 }
